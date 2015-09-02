@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Region {
+public class Region {
 	
 	protected List<Integer> possibleValues = new ArrayList<Integer>() {{
 		add(1);
@@ -26,5 +26,9 @@ public abstract class Region {
 	{
 		return possibleValues;
 	}
-
+	
+	public List<Cell> getCells()
+	{
+		return cells;
+	}
 }

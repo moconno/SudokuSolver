@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 
 public class Column extends Region 
 {
@@ -15,6 +13,6 @@ public class Column extends Region
 				possibleValues.remove(Board.getCell(i, columnNumber).getCurrentValue());
 			}
 		}
-		Board.addColumn(this);
+		Board.addRegion(this);
 	}
 }

@@ -13,6 +13,6 @@ public class Row extends Region{
 				possibleValues.remove(Board.getCell(rowNumber, i).getCurrentValue());
 			}
 		}
-		Board.addRow(this);
+		Board.addRegion(this);
 	}
 }

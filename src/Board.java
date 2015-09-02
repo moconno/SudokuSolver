@@ -5,12 +5,7 @@ public final class Board {
 	
 	static Cell[][] cells = new Cell[9][9];
 	
-	static List<Grid> grids = new ArrayList<Grid>();
-	
-	static List<Row> rows = new ArrayList<Row>();	
-	
-	static List<Column> columns = new ArrayList<Column>();	
-	
+	static List<Region> regions = new ArrayList<Region>();
 	
 	//Add a cell to the board
 	public static void AddCell(int row, int col, Cell cell)
@@ -23,42 +18,15 @@ public final class Board {
 	{
 		return cells[row][col];
 	}
-
-	//Add a grid to the board
-	public static void addGrid(Grid grid) 
+	
+	public static void addRegion(Region region)
 	{
-		grids.add(grid);
-		
+		regions.add(region);
 	}
 	
-	//return a grid from the board
-	public static Grid getGrid(int gridNumber)
+	public static List<Region> getRegions()
 	{
-		return grids.get(gridNumber - 1);
-	}
-	
-	//Add a row to the board
-	public static void addRow(Row row)
-	{
-		rows.add(row);
-	}
-	
-	//return a row from the board
-	public static Row getRow(int rowNumber)
-	{
-		return rows.get(rowNumber - 1);
-	}
-	
-	//Add a row to the board
-	public static void addColumn(Column column)
-	{
-		columns.add(column);
-	}
-		
-	//return a row from the board
-	public static Column getColumn(int columnNumber)
-	{
-		return columns.get(columnNumber - 1);
+		return regions;
 	}
 	
 }

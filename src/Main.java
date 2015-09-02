@@ -65,7 +65,18 @@ public class Main {
 			new Column(i);
 		}
 		
-		System.out.println(Board.getColumn(7).getPossibleValues());
+		for(int i = 0; i < Board.getRegions().size(); i++)
+		{
+			for(Region region : Board.getRegions())
+			{
+				for(Cell cell : region.getCells())
+				{
+					cell.setPossibleValues(region.getPossibleValues());
+				}
+			}
+		}
+		
+		System.out.println(Board.getCell(7, 3).getPossibleValues());
 		
 	}
 

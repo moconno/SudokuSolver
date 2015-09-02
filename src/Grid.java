@@ -11,14 +11,14 @@ public class Grid extends Region {
 			{
 				cells.add(Board.getCell(i, j));
 				
+				//Remove a value from the possibleValues list
 				if(possibleValues.contains(Board.getCell(i, j).getCurrentValue()))
 				{
 					possibleValues.remove(Board.getCell(i, j).getCurrentValue());
 				}					
 			}
 		}
-		
-		Board.addGrid(this);
+		Board.addRegion(this);
 	}
 	
 }
