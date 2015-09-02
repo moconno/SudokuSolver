@@ -14,5 +14,6 @@ public class Column extends Region
 			}
 		}
 		Board.addRegion(this);
+		addObservers();
 	}
 }

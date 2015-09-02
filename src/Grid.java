@@ -9,8 +9,7 @@ public class Grid extends Region {
 		{
 			for(int j = columnStart; j <= columnEnd; j++)
 			{
-				cells.add(Board.getCell(i, j));
-				
+				cells.add(Board.getCell(i, j));	
 				//Remove a value from the possibleValues list
 				if(possibleValues.contains(Board.getCell(i, j).getCurrentValue()))
 				{
@@ -18,7 +17,10 @@ public class Grid extends Region {
 				}					
 			}
 		}
+		
 		Board.addRegion(this);
+		
+		addObservers();
 	}
 	
 }

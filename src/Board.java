@@ -29,4 +29,47 @@ public final class Board {
 		return regions;
 	}
 	
+	public static boolean isSolved()
+	{
+		boolean isSolved = true;
+		
+		for(int i = 0; i < 9; i++)
+		{
+			for(int j = 0; j < 9; j++)
+			{
+				if(cells[i][j].getCurrentValue() == 0)
+				{
+					isSolved = false;
+				}
+			}
+		}
+		return isSolved;
+	}
+	
+	public static void setCellPossibleValues()
+	{
+		for(int i = 0; i < Board.getRegions().size(); i++)
+		{
+			for(Region region : Board.getRegions())
+			{
+				for(Cell cell : region.getCells())
+				{
+					cell.setPossibleValues(region.getPossibleValues());
+				}
+			}
+		}
+	}
+	
+	public static void printBoard()
+	{
+		for(int i = 0; i < 9; i++)
+		{
+			for(int j = 0; j < 9; j++)
+			{
+				System.out.print(Board.getCell(i, j).getCurrentValue());
+			}
+			System.out.println();
+		}
+	}
+	
 }

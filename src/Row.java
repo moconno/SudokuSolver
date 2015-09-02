@@ -1,6 +1,7 @@
 
 
-public class Row extends Region{
+public class Row extends Region
+{
 
 	public Row(int rowNumber)
 	{
@@ -14,5 +15,6 @@ public class Row extends Region{
 			}
 		}
 		Board.addRegion(this);
+		addObservers();
 	}
 }

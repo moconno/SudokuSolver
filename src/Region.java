@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observer;
 
 public class Region {
 	
@@ -30,5 +31,16 @@ public class Region {
 	public List<Cell> getCells()
 	{
 		return cells;
+	}
+	
+	public void addObservers()
+	{
+		for(Cell cell : cells)
+		{
+			for(Cell cell1 : cells)
+			{
+				cell.addObserver(cell1);
+			}
+		}
 	}
 }
