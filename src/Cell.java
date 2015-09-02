@@ -3,19 +3,44 @@ import java.util.ArrayList;
 
 public class Cell {
 	
-	public int currentValue;
+	Integer currentValue;
 	
-	int rowNumber;
+	boolean hasValidValue;
 	
-	int colNumber;
+	boolean hasFinalValue;
 	
 	List<Integer> possibleValues = new ArrayList<Integer>();
 	
-	public Cell(int row, int col, int value)
+	public Cell(int value)
 	{
 		currentValue = value;
-		rowNumber = row;
-		colNumber = col;
+		
+		if(currentValue != 0)
+		{
+			hasValidValue = true;
+			hasFinalValue = false;
+		}
+		else
+			hasFinalValue = true;
 	}
-
+	
+	public Integer getCurrentValue()
+	{
+		return currentValue;
+	}
+	
+	public boolean hasValidValue()
+	{
+		return hasValidValue();
+	}
+	
+	public boolean hasFinalValue()
+	{
+		return hasFinalValue();
+	}
+	
+	public void setPossibleValues(List<Integer> possibleValues)
+	{
+		
+	}
 }

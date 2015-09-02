@@ -21,11 +21,11 @@ public class Main {
 					
 					if (line.charAt(i) == ',') 
 					{
-						cell = new Cell(lineCount, i, 0);
+						cell = new Cell(0);
 					} 
 					else 
 					{
-						cell = new Cell(lineCount, i, (int)Character.getNumericValue(line.charAt(i)));
+						cell = new Cell((int)Character.getNumericValue(line.charAt(i)));
 					}
 					
 					Board.AddCell(lineCount, i, cell);
@@ -47,14 +47,25 @@ public class Main {
 			e.printStackTrace();
 		}
 		
+		new Grid(0, 2, 0, 2);
+		new Grid(0, 2, 3, 5);
+		new Grid(0, 2, 6, 8);
+		
+		new Grid(3, 5, 0, 2);
+		new Grid(3, 5, 3, 5);
+		new Grid(3, 5, 6, 8);
+		
+		new Grid(6, 8, 0, 2);
+		new Grid(6, 8, 3, 5);
+		new Grid(6, 8, 6, 8);
+		
 		for(int i = 0; i < 9; i++)
 		{
-			for(int j = 0; j < 9; j++)
-			{
-				System.out.print(Board.getCell(i, j).currentValue);
-			}
-			System.out.println();
+			new Row(i);
+			new Column(i);
 		}
+		
+		System.out.println(Board.getColumn(7).getPossibleValues());
 		
 	}
 
